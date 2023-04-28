@@ -27,6 +27,7 @@ namespace lab11
             }
             return true;
         }
+
     }
 
     internal class Task1
