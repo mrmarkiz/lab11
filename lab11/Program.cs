@@ -1,27 +1,29 @@
-﻿namespace lab11
-{
-    public static class intExtensions
-    {
-        public static bool IsOdd(this int number)
-        {
-            return number % 2 == 1;
-        }
-        public static bool IsEven(this int number)
-        {
-            return number % 2 == 0;
-        }
-    }
+﻿using System.Xml.Serialization;
 
+namespace lab11
+{
     public class Program
     {
         public static void Main()
         {
-            Console.Write("Enter numeber: ");
-            if(int.TryParse(Console.ReadLine(), out int number))
+            int choice;
+            do
             {
-                Console.WriteLine($"Odd check result: {number.IsOdd()}");
-                Console.WriteLine($"Even check result: {number.IsEven()}");
-            }
+                Console.Write("Enter task to run: ");
+                int.TryParse(Console.ReadLine(), out choice);
+                switch (choice)
+                {
+                    case 1:
+                        Task1.Run();
+                        break;
+                    case 2:
+                        Task2.Run();
+                        break;
+                    case 3:
+                        Task3.Run();
+                        break;
+                }
+            } while (choice != 0);
         }
     }
 }
